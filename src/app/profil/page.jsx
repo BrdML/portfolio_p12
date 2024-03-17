@@ -21,15 +21,15 @@ function Profil() {
             <h2 className='text-left text-2xl font-bold text-[#C4552F]'>Profil</h2>
             <p className='textProfil flex item-center justify-center text-wrap w-[54%]'>
               Bonjour et bienvenue sur mon portfolio !
-              Après 7 ans dans l’électrotechnique, j’ai décider de 
+              Après 7 ans dans l&apos;électrotechnique, j&apos;ai décider de 
               faire une reconversion en tant que développeur web.
 
-              Ma formation m’a permis d’acquérir de solide bases 
+              Ma formation m&apos;a permis d&apos;acquérir de solide bases 
               dans la Gestion de projet grace à la méthode agile,
               La mainteance et le débugage de site web, ainsi que
               la maitraise du framework React Js.
 
-              Motivé par l\'envie de créer, je saurai être un atout 
+              Motivé par l&apos;envie de créer, je saurai être un atout 
               dans votre entreprise.
             </p>
           </div>
@@ -51,19 +51,19 @@ function Profil() {
               <FontAwesomeIcon
                 icon={faList}
               />
-              <p>capacité d\'adaptation et organisation</p>
+              <p>capacité d&apos;adaptation et organisation</p>
             </div>
             <div  className='iconProfil'>
               <FontAwesomeIcon
                 icon={faBook}
               />
-              <p>curiosité et soif d\'apprendre</p>
+              <p>curiosité et soif d&apos;apprendre</p>
             </div>
             <div  className='iconProfil '>
               <FontAwesomeIcon
                 icon={faPeopleGroup}
               />
-              <p>Travail en colaboration et esprit d\'équipe</p>
+              <p>Travail en colaboration et esprit d&apos;équipe</p>
             </div>
           </div>
       </div>
