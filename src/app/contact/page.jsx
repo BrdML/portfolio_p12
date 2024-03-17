@@ -83,7 +83,6 @@ function Contact() {
           <h2 className='font-semibold'>Formulaire de contact</h2>
 
           <p className='text-wrap w-80'>N&apos;hesitez pas à me contacter pour plus d&apos;informations ! Vous trouverez également 
-          <p className='text-wrap w-80'>N\'hesitez pas à me contacter pour plus d\'informations ! Vous trouverez également 
             mes réseaux en bas de page.</p>
 
           <form onSubmit={handleSubmit} className='flex flex-col gap-10 w-80'>
@@ -125,8 +124,8 @@ function Contact() {
             <button type="submit" disabled={!isHuman}>
               {isSubmitting ? 'Envoi en cours...' : 'Envoyer'}
             </button>
-            {successMessage && <p className="success-message">{successMessage}</p>}
-            {errorsMessage && <p className="error-message">{errorsMessage}</p>}
+            {successMessage && (<p className="success-message">{successMessage}</p>)}
+            {errorsMessage && (<p className="error-message">{errorsMessage}</p>)}
           </form>
           </div>
         </main>
