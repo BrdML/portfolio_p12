@@ -1,6 +1,6 @@
 "use client"
 
-import SkillsCard from '@/components/skillsCard';
+import SkillsCard from '../../components/SkillsCard';
 import { motion } from 'framer-motion';
 import './index.css';
 
