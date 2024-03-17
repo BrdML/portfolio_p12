@@ -20,11 +20,11 @@ export default function Home() {
       <main className="container main_home mx-auto p-4 my-14">
         <div className='homecontainer h-full flex justify-between mx-auto'>
           <div className="home flex flex-col gap-6">
-              <p className="font-bold text-2xl">Salut, c'est Moi</p>
+              <p className="font-bold text-2xl">Salut, c&apos;est Moi</p>
               <h1 className="font-extrabold text-4xl">Bertrand Menel</h1>
               <p className="font-bold text-2xl">Un Développeur <span className="text-[#C4552F] dark:text-dark-secondary">Front-end</span> & <span className="text-[#C4552F] dark:text-dark-secondary">Intégrateur web</span></p>
               <p className="w-[100%]">
-                Passionné par la création d'interfaces web intuitives <br />
+                Passionné par la création d&apos;interfaces web intuitives <br />
                 et esthétiques, je suis à votre disposition pour collaborer <br />
                 sur vos projets digitaux. - <span className=" font-bold text-[#C4552F] dark:text-dark-secondary">LET‘S BUILD SOMETHING TOGETHER</span> -
               </p>

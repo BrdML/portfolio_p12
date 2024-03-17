@@ -29,7 +29,7 @@ function Profil() {
               La mainteance et le débugage de site web, ainsi que
               la maitraise du framework React Js.
 
-              Motivé par l'envie de créer, je saurai être un atout 
+              Motivé par l&apos;envie de créer, je saurai être un atout 
               dans votre entreprise.
             </p>
           </div>
@@ -51,19 +51,19 @@ function Profil() {
               <FontAwesomeIcon
                 icon={faList}
               />
-              <p>capacité d'adaptation et organisation</p>
+              <p>capacité d&apos;adaptation et organisation</p>
             </div>
             <div  className='iconProfil'>
               <FontAwesomeIcon
                 icon={faBook}
               />
-              <p>curiosité et soif d'apprendre</p>
+              <p>curiosité et soif d&apos;apprendre</p>
             </div>
             <div  className='iconProfil '>
               <FontAwesomeIcon
                 icon={faPeopleGroup}
               />
-              <p>Travail en colaboration et esprit d'équipe</p>
+              <p>Travail en colaboration et esprit d&apos;équipe</p>
             </div>
           </div>
       </div>
