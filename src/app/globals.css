@@ -2,11 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --color-light: #002B5B;
   --color-dark: #C4552F;
   --background-light: #E6E1D9;
   --background-dark: #292B2C;
+  --test: #181616;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,6 +22,7 @@
 body {
   color: var(--color-light);
   background-color: var(--background-light);
+  max-width: 1440px;
 }
 
 @layer utilities {

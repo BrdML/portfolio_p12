@@ -1,0 +1,40 @@
+.socialIcon a {
+    background-color: #C4552F;
+    border-radius: 30px;
+    height: 40px;
+    width: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.homeBtn {
+    display: flex;
+    gap: 30px;
+}
+
+.homeBtn a {
+    background-color: #002B5B;
+    color: #C4552F;
+    border-radius: 20px;
+    padding: 6px;
+    width: 130px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.firstAvatar {
+    height: 400px;
+}
+
+@media (max-width: 991px) {
+    .homecontainer{
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+    }
+
+    .home{
+        margin: auto;
+        align-items: center;
+    }
+
+}

@@ -1,0 +1,55 @@
+.navLogo img {
+    display: flex;
+}
+
+.btnBackground {
+    background-color: #C4552F;
+    border-radius: 30px;
+    height: 40px;
+    width: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navLinks{
+    font-weight: bold;
+    display: flex;
+}
+
+.menuBurger {
+    display: none;
+}
+@media (max-width: 991px) {
+    .navLinks{
+        flex-direction: column;
+        position: absolute;
+        right: 100px;
+        top: 130px;
+        z-index: 50;
+        background: black;
+        color: white;
+        top: 0;
+        width: 100%;
+        left: 0;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0;
+        gap: 5px;
+        position: fixed;
+        overflow: hidden;
+    }
+
+    .menuBurger{
+        display: flex;
+    }
+
+    .hidden{
+        display: none;
+    }
+
+    .firstAvatar {
+        margin: auto;
+    }
+
+}

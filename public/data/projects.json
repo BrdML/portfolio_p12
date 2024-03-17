@@ -1,0 +1,23 @@
+[
+    {
+      "title": "Kasa Project",
+      "image": "/assets/images/Project/kasaProject.png",
+      "alt": "Kasa Project - Short description",
+      "link": "/",
+      "github": "https://github.com/BrdML/projet_8_kasa"
+    },
+    {
+      "title": "77 Events Project",
+      "image": "/assets/images/Project/77eventsProject.png",
+      "alt": "77 Events Project - Short description",
+      "link": "/",
+      "github": "https://github.com/BrdML/Projet10_debbuger_un_site"
+    },
+    {
+      "title": "Argent Bank Project",
+      "image": "/assets/images/Project/AgentBankProject.png",
+      "alt": "Argent Bank Project - Short description",
+      "link": "/",
+      "github": "https://github.com/BrdML/ArgentBank_P11"
+    }
+  ]

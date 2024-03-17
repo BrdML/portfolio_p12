@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import TransitionProvider from "@/components/TransitionProvider";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,13 +13,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <div className="w-screen h-sreen ">
-          <div className="h-24">
-            <Navbar/>
-            {children}
-            <Footer/>
-          </div>
+      <body className={`${inter.className} dark:bg-dark-background dark:text-dark-text`}>
+        <div>
+          <TransitionProvider>{children}</TransitionProvider>
         </div>
       </body>
     </html>

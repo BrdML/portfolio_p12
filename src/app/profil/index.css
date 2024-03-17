@@ -1,0 +1,66 @@
+.profilContainer {
+  margin-top: 30px;
+}
+
+.iconContainer svg {
+  color: #c4552f;
+  font-size: large;
+}
+
+.iconProfil {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.iconProfil p {
+  width: 60%;
+  font-weight: bold;
+}
+
+@media (max-width: 991px) {
+  .profil {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profil img{
+    width: 50%;
+  }
+
+  .textProfil{
+    width: 70%;
+  }
+
+  .iconContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .iconContainer:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .iconProfil {
+    width: 140px;
+    height: 140px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .iconProfil p{
+    font-size:medium;
+    width: 100%;
+  }
+}
