@@ -20,6 +20,7 @@ function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
+    // Validation de l'email à l'aide d'une expression régulière
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       setErrorsMessage('Veuillez entrer une adresse email valide.');
@@ -30,6 +31,7 @@ function Contact() {
       return;
     }
 
+    // Vérifier si tous les champs obligatoires sont remplis
     if (!email || !name || !message) {
       setErrorsMessage('Veuillez remplir tous les champs obligatoires.');
       setTimeout(() => {
@@ -39,6 +41,7 @@ function Contact() {
       return;
     }
 
+    // Vérifier si la case "isHuman" est cochée
     if(!isHuman) {
       setErrorsMessage('Veuillez cocher la case.');
       setTimeout(() => {
@@ -46,13 +49,13 @@ function Contact() {
       }, 5000);
       setIsSubmitting(false);
     }
-
+    // Envoye d'email en utilisant la bibliothèque emailjs
     emailjs
       .sendForm(
-        'service_o2icca6',
-        'template_fk71s0e',
-        e.target,
-        '4xSQ8A4hNetI33DZ0'
+        'service_o2icca6', // ID de service EmailJS
+        'template_fk71s0e', // ID de template EmailJS
+        e.target, // Données du formulaire
+        '4xSQ8A4hNetI33DZ0' // ID utilisateur EmailJS
       )
       .then(() => {
         setIsSubmitting(false);

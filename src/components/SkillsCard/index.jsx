@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const SkillsCard = ({image, title, alt}) => {
     return (
-            <div className="Skillscard bg-white w-[120px] h-[120px] flex flex-col justify-center items-center shadow-md rounded">
+            <div className="Skillscard bg-white dark:bg-dark-secondary w-[120px] h-[120px] flex flex-col justify-center items-center shadow-md rounded">
                 <div className="image-container">
                     <Image width={48} height={48} src={image} alt={alt}/>
                 </div>

@@ -8,43 +8,48 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 const ProjectSlide = () => {
+  // Etat des projets à afficher
   const [projects, setProjects] = useState([]);
-    const [positionIndex, setPositionIndex] = useState([0, 1, 2]);
 
-    const handleNext = () => {
-        setPositionIndex((prevIndex) => {
-            const updatedIndex = prevIndex.map((prevIndex) => (prevIndex + 1) % 3)
-            return updatedIndex
-        }) 
-    }
+  // Etat des positions des projets (pour l'animation)
+  const [positionIndex, setPositionIndex] = useState([0, 1, 2]);
 
-    useEffect(() => {
-      const fetchData = async () => {
-        const response = await fetch('/data/projects.json');
-        const data = await response.json(); 
-        setProjects(data);
-      };
+  // Fonction pour faire défiler les projets vers la position suivante
+  const handleNext = () => {
+      setPositionIndex((prevIndex) => {
+          const updatedIndex = prevIndex.map((prevIndex) => (prevIndex + 1) % 3)
+          return updatedIndex
+      }) 
+  }
+
+  // Récupération des données des projets au chargement du composant
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch('/data/projects.json');
+      const data = await response.json(); 
+      setProjects(data);
+    };
     
-      fetchData();
-    }, []);
+    fetchData();
+  }, []);
 
-    
+  // Définition des positions possibles des projets pour l'animation
+  const positions = [
+      'center',
+      'left1',
+      'left',
+      'right1',
+      'right',
+  ]
 
-    const positions = [
-        'center',
-        'left1',
-        'left',
-        'right1',
-        'right',
-    ]
-
-    const imageVariants = {
-        center: {x: '0%', scale: 1, zIndex: 5},
-        left1: {x: '50%', scale: 0.7, zIndex: 2},
-        left: {x: '-50%', scale: 0.7, zIndex: 2},
-        right: {x: '90%', scale: 0.5, zIndex: 1},
-        right1: {x: '50%', scale: 0.7, zIndex: 2},
-    }
+  // Définition des variantes d'animation pour chaque position
+  const imageVariants = {
+      center: {x: '0%', scale: 1, zIndex: 5},
+      left1: {x: '50%', scale: 0.7, zIndex: 2},
+      left: {x: '-50%', scale: 0.7, zIndex: 2},
+      right: {x: '90%', scale: 0.5, zIndex: 1},
+      right1: {x: '50%', scale: 0.7, zIndex: 2},
+  }
   return (
     <div className='flex items-center justify-center flex-col h-screen'>
       {projects.map((project, index) => (

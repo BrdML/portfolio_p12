@@ -10,9 +10,12 @@ import NavLink from '../navLink';
 import { motion } from 'framer-motion';
 
 function Navbar() {
-    const [darkMode, setDarkMode] = useState(false);
+    const [darkMode, setDarkMode] = useState(() => {
+        return localStorage.getItem('theme') === 'dark';
+      });
     const [open, setOpen] = useState(false);
     
+    // Variables pour les animations du menu burger
     const topVariants = {
         closed:{
             rotate:0,
@@ -62,25 +65,18 @@ function Navbar() {
         },
     }
 
-    const handleToggleMode = () => {
-        setDarkMode(!darkMode);
-    };
+    // Gestion du mode sombre
+    useEffect(() => {
+        document.documentElement.classList.toggle('dark', darkMode);
+        localStorage.setItem('theme', darkMode ? 'dark' : 'light');
+    }, [darkMode]);
     
-    useEffect(() => {
-        const theme = localStorage.getItem("theme")
-        if(theme === "dark") setDarkMode(true)
-    }, [])
+    const handleToggleMode = () => {
+        setDarkMode((prevDarkMode) => !prevDarkMode);
+    };
 
-    useEffect(() => {
-        if(!darkMode){
-            document.documentElement.classList.add('dark')
-            localStorage.setItem("theme", "dark")
-        } else {
-            document.documentElement.classList.remove('dark')
-            localStorage.setItem("theme", "light")
-        }
-    }, [darkMode])
 
+    // Liens de la barre de navigation
     const links = [
         {url: "/", title: "Accueil"},
         {url: "/profil", title: "Profil"},
@@ -149,7 +145,7 @@ function Navbar() {
             <div className='btnDarkMode'>
                 <button className='btnBackground dark:bg-dark-secondary' onClick={handleToggleMode}>
                 <FontAwesomeIcon
-                    icon={darkMode ? faMoon : faSun}
+                    icon={!darkMode ? faMoon : faSun}
                     className="light-mode-icon"
                 />
                 </button>
