@@ -10,12 +10,7 @@ import NavLink from '../navLink';
 import { motion } from 'framer-motion';
 
 function Navbar() {
-    const [darkMode, setDarkMode] = useState(() => {
-        // Récupération de la valeur du mode sombre depuis le localStorage, si elle existe
-        const savedMode = localStorage.getItem('theme');
-        // Si le mode sombre est stocké dans le localStorage, on le retourne, sinon on retourne false par défaut
-        return savedMode === 'dark' ? true : false;
-      });
+    const [darkMode, setDarkMode] = useState(false);
 
     const [open, setOpen] = useState(false);
     
@@ -69,19 +64,20 @@ function Navbar() {
         },
     }
 
- // Fonction pour basculer entre le mode sombre et le mode clair
+ 
   const handleToggleMode = () => {
-    const newMode = !darkMode; // Inversion du mode actuel
-    setDarkMode(newMode); // Mise à jour du mode sombre
-    localStorage.setItem('theme', newMode ? 'dark' : 'light'); // Stockage du mode sombre dans le localStorage
+    setDarkMode(!darkMode);
+    localStorage.setItem('theme', !darkMode ? 'dark' : 'light');
   };
 
     // Effet pour mettre à jour la classe de l'élément racine HTML en fonction du mode sombre
     useEffect(() => {
-        if (darkMode) {
-          document.documentElement.classList.add('dark');
+        const theme = localStorage.getItem('theme');
+        if(theme === 'dark'){
+            document.documentElement.classList.add('dark');
+            setDarkMode(true)
         } else {
-          document.documentElement.classList.remove('dark');
+            document.documentElement.classList.remove('dark');
         }
       }, [darkMode]);
 
