@@ -12,7 +12,7 @@ function Footer() {
     {url: "/contact", title: "Contact"}
 ];
   return (
-    <div className="footer w-[100%] flex justify-around bg-[#C4552F] dark:bg-dark-darkbg p-5 my-20">
+    <div className="footer w-[100%] flex flex-col items-center bg-[#C4552F] dark:bg-dark-darkbg p-5 my-20">
       <div className='flex flex-col'>
         <p className='font-bold'>Réseaux Social</p>
         <div className='socialIconFooter flex gap-5 my-5'>
@@ -31,14 +31,6 @@ function Footer() {
         </div>
       </div>
       <p className='font-bold text-wrap'>© Bertrand Menel 2024 - All rights reserved </p>
-      <div className='flex flex-col'>
-        <p className='font-bold'>Navigations</p>
-        {links.map(link=>(
-            <Link className='text-white text-center hover:text-[#002B5B] hover:dark:text-dark-secondary' href={link.url} key={link.title}>
-                {link.title}
-            </Link>
-        ))} 
-      </div>
     </div>
   )
 }

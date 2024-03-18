@@ -1,23 +1,26 @@
 [
     {
-      "title": "Kasa Project",
+      "title": "Projet Kasa",
       "image": "/assets/images/Project/kasaProject.png",
-      "alt": "Kasa Project - Short description",
+      "alt": "Kasa Project",
       "link": "/",
-      "github": "https://github.com/BrdML/projet_8_kasa"
+      "github": "https://github.com/BrdML/projet_8_kasa",
+      "summary": "Ce projet consiste à créer une application web permettant aux utilisateurs de la plateforme ArgentBank de se connecter et de gérer leurs comptes et profils. Dans une seconde partie du projet, il est demandé de déterminer les endpoints d'API nécessaires pour gérer certaines fonctionnalités pour les transactions."
     },
     {
-      "title": "77 Events Project",
+      "title": "Projet 77 Events",
       "image": "/assets/images/Project/77eventsProject.png",
-      "alt": "77 Events Project - Short description",
+      "alt": "77 Events Project",
       "link": "/",
-      "github": "https://github.com/BrdML/Projet10_debbuger_un_site"
+      "github": "https://github.com/BrdML/Projet10_debbuger_un_site",
+      "summary": "Ce projet consiste à debugger et finaliser le développement du site d'une agence événementielle grace à chrome DevTools et par la suite créer un cahier des recettes afin d'effectuer des tests unitaires et d'intégration."
     },
     {
-      "title": "Argent Bank Project",
+      "title": "Projet Argent Bank",
       "image": "/assets/images/Project/AgentBankProject.png",
-      "alt": "Argent Bank Project - Short description",
+      "alt": "Argent Bank Project",
       "link": "/",
-      "github": "https://github.com/BrdML/ArgentBank_P11"
+      "github": "https://github.com/BrdML/ArgentBank_P11",
+      "summary": "Ce projet consiste à créer une application web permettant aux utilisateurs de la plateforme ArgentBank de se connecter et de gérer leurs comptes et profils. Dans une seconde partie du projet, il est demandé de déterminer les endpoints d'API nécessaires pour gérer certaines fonctionnalités pour les transactions."
     }
   ]

@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 const ProjectSlide = () => {
   // Etat des projets à afficher
@@ -14,13 +15,35 @@ const ProjectSlide = () => {
   // Etat des positions des projets (pour l'animation)
   const [positionIndex, setPositionIndex] = useState([0, 1, 2]);
 
+  const [showCard, setShowCard] = useState(false);
+  const [cardIndex, setCardIndex] = useState(null);
+
   // Fonction pour faire défiler les projets vers la position suivante
   const handleNext = () => {
-      setPositionIndex((prevIndex) => {
-          const updatedIndex = prevIndex.map((prevIndex) => (prevIndex + 1) % 3)
-          return updatedIndex
-      }) 
-  }
+    setPositionIndex((prevIndex) => {
+      const updatedIndex = prevIndex.map((prevIndex) => (prevIndex + 1) % 3);
+      return updatedIndex;
+    });
+  };
+
+  const handleMouseEnter = (index) => {
+    setShowCard(true);
+    setCardIndex(index);
+  };
+
+  const handleMouseLeave = () => {
+    setShowCard(false);
+    setCardIndex(null);
+  };
+  const handlePrevious = () => {
+    setPositionIndex((prevIndex) => {
+      const updatedIndex = prevIndex.map((prevIndex) => {
+        return prevIndex === 0 ? 2 : prevIndex - 1;
+      });
+      return updatedIndex;
+    });
+  };
+
 
   // Récupération des données des projets au chargement du composant
   useEffect(() => {
@@ -51,7 +74,7 @@ const ProjectSlide = () => {
       right1: {x: '50%', scale: 0.7, zIndex: 2},
   }
   return (
-    <div className='flex items-center justify-center flex-col h-screen'>
+    <div className='flex items-center justify-center flex-col h-screen relative'>
       {projects.map((project, index) => (
         <motion.div
           key={index}
@@ -70,6 +93,8 @@ const ProjectSlide = () => {
                     width={400}
                     height={200}
                     className='object-cover'
+                    onMouseEnter={() => handleMouseEnter(index)} 
+                    onMouseLeave={handleMouseLeave}
                 />
                 </Link>
                 <div className='p-4 flex items-center flex-col justify-center'>
@@ -77,8 +102,7 @@ const ProjectSlide = () => {
                     <div>
 
                     </div>
-                    <div className='linkproject flex items-center'>
-                    <Link href={project.link} className='ml-4 rounded-lg bg-black text-white p-2 px-6 text-sm font-semibold'>Voir le Projet</Link> 
+                    <div className='linkproject flex items-center'> 
                         <Link href={project.github} className='w-10 m-auto'target="_blank">
                             <FontAwesomeIcon
                                 icon={faGithub}
@@ -88,11 +112,22 @@ const ProjectSlide = () => {
                     </div>
                 </div>
             </div>
+            {showCard && cardIndex === index && (
+              <div className='cardDescription absolute top-0 left-0 w-full text-center'>
+                {/* Adjust tooltip position and styles as needed */}
+                <p className='text-white bg-black bg-opacity-70 p-2 rounded'>{project.summary}</p>
+              </div>
+            )}
         </motion.div>
       ))}            
-        <button onClick={handleNext} className='absolute bottom-0 mt-4 bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 p-4 rounded'>
-            Projet suivant
-         </button>
+      <div className='w-full flex justify-between'>
+        <button onClick={handlePrevious} className='font-bold text-5xl'>
+          <FontAwesomeIcon icon={faChevronLeft} />
+        </button>
+        <button onClick={handleNext} className='font-bold text-5xl'>
+          <FontAwesomeIcon icon={faChevronRight} />
+        </button>
+      </div>
     </div>
   )
 }

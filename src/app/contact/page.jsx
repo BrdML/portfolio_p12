@@ -124,7 +124,7 @@ function Contact() {
               />
               <label htmlFor="is-human" className='font-bold text-red-800'> cocher la case pour envoyer</label>
             </div>
-            <button type="submit" disabled={!isHuman}>
+            <button type="submit" className='bg-dark-secondary font-bold rounded dark:bg-dark-darkbg' disabled={!isHuman}>
               {isSubmitting ? 'Envoi en cours...' : 'Envoyer'}
             </button>
             {successMessage && (<p className="success-message">{successMessage}</p>)}
