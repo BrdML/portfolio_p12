@@ -114,7 +114,6 @@ const ProjectSlide = () => {
             </div>
             {showCard && cardIndex === index && (
               <div className='cardDescription absolute top-0 left-0 w-full text-center'>
-                {/* Adjust tooltip position and styles as needed */}
                 <p className='text-white bg-black bg-opacity-70 p-2 rounded'>{project.summary}</p>
               </div>
             )}
