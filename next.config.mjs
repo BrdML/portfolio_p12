@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+};
+module.exports = {
+    exportPaths: ['/competences', '/contact', '/portfolio', '/profil'],
+};
 
 export default nextConfig;
