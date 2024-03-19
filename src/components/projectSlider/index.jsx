@@ -99,7 +99,7 @@ const ProjectSlide = () => {
                 </Link>
                 <div className='p-4 flex w-full items-center flex-col justify-center'>
                     <h3 className='font-bold text-xl mb-2 text-center'>{project.title}</h3>
-                    <div className='flex flex-row justify-around w-full'>
+                    <div className='flex flex-row flex-wrap justify-around w-full'>
                       {project.techno.map((image) => (
                         <Image width={30} height={30} key={image.image} src={image.image} alt={image.alt} />
                       ))}
