@@ -97,10 +97,12 @@ const ProjectSlide = () => {
                     onMouseLeave={handleMouseLeave}
                 />
                 </Link>
-                <div className='p-4 flex items-center flex-col justify-center'>
+                <div className='p-4 flex w-full items-center flex-col justify-center'>
                     <h3 className='font-bold text-xl mb-2 text-center'>{project.title}</h3>
-                    <div>
-
+                    <div className='flex flex-row justify-around w-full'>
+                      {project.techno.map((image) => (
+                        <Image width={30} height={30} key={image.image} src={image.image} alt={image.alt} />
+                      ))}
                     </div>
                     <div className='linkproject flex items-center'> 
                         <Link href={project.github} className='w-10 m-auto'target="_blank">
